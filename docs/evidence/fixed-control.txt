@@ -1,0 +1,8 @@
+observed_at_utc: 2026-11-05T14:16:07Z
+container_id: 0c08d26f0a3e5d67cf10d7fb1b08119e4e53cf3812833235615f5c838fe9b398
+container_created_utc: 2026-11-05T14:15:49.926356473Z
+image_manifest: sha256:f7d7e986d75a525ab259c9f355a0ff4a7ac9d770074fb82f0fbd53742d752a58
+command: python3 -u poc.py --profile fixed_control
+proof_command=id
+{"profile": "fixed_control", "status": 401}
+PASS: same request rejected by comparison build

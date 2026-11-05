@@ -1,0 +1,74 @@
+services:
+  db-affected:
+    image: postgres@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
+    profiles: [affected]
+    environment:
+      POSTGRES_USER: artex
+      POSTGRES_PASSWORD: local-only-artex-proof
+      POSTGRES_DB: artex
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U artex -d artex"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+    security_opt: [no-new-privileges:true]
+    restart: "no"
+
+  affected:
+    image: tomicdd/artex@sha256:cb85a7206290dc1813e3203e044741054b26c7a7c557c7d9d6d91af20aeb232b
+    platform: linux/amd64
+    profiles: [affected]
+    depends_on:
+      db-affected:
+        condition: service_healthy
+    environment:
+      ARTEX_PG_DSN: postgres://artex:local-only-artex-proof@db-affected:5432/artex?sslmode=disable
+      HTTP_PROXY: ""
+      HTTPS_PROXY: ""
+      ALL_PROXY: ""
+      http_proxy: ""
+      https_proxy: ""
+      all_proxy: ""
+    ports: ["127.0.0.1:18787:8787"]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 256
+    mem_limit: 1g
+    restart: "no"
+
+  db-control:
+    image: postgres@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
+    profiles: [control]
+    environment:
+      POSTGRES_USER: artex
+      POSTGRES_PASSWORD: local-only-artex-proof
+      POSTGRES_DB: artex
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U artex -d artex"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+    security_opt: [no-new-privileges:true]
+    restart: "no"
+
+  control:
+    image: ruoji6/artex@sha256:f7d7e986d75a525ab259c9f355a0ff4a7ac9d770074fb82f0fbd53742d752a58
+    platform: linux/amd64
+    profiles: [control]
+    depends_on:
+      db-control:
+        condition: service_healthy
+    environment:
+      ARTEX_PG_DSN: postgres://artex:local-only-artex-proof@db-control:5432/artex?sslmode=disable
+      HTTP_PROXY: ""
+      HTTPS_PROXY: ""
+      ALL_PROXY: ""
+      http_proxy: ""
+      https_proxy: ""
+      all_proxy: ""
+    ports: ["127.0.0.1:18788:8787"]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 256
+    mem_limit: 1g
+    restart: "no"

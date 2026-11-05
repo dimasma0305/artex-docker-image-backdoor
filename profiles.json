@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "builds": {
+    "tomicdd-amd64-2026-10-08": {
+      "image": "tomicdd/artex@sha256:cb85a7206290dc1813e3203e044741054b26c7a7c557c7d9d6d91af20aeb232b",
+      "platform": "linux/amd64",
+      "go_version": "go1.26.3",
+      "binary_sha256": "d5070f52262effe216b840711343bff8f2787f39208d887d8dfd9c673f8d1573",
+      "source": "Docker Hub image manifest captured 2026-11-05",
+      "status": "affected"
+    },
+    "ruoji6-amd64-2026-11-05": {
+      "image": "ruoji6/artex@sha256:f7d7e986d75a525ab259c9f355a0ff4a7ac9d770074fb82f0fbd53742d752a58",
+      "platform": "linux/amd64",
+      "go_version": "go1.26.10",
+      "binary_sha256": "fc6684f563e0ceb629335419325898bcc996eac81e3d89f932e87bff6b92d77f",
+      "source": "Docker Hub image manifest captured 2026-11-05",
+      "status": "comparison; not a claimed vendor patch"
+    }
+  },
+  "profiles": {
+    "affected": {
+      "build": "tomicdd-amd64-2026-10-08",
+      "lab_path": "lab/go1.26/artx",
+      "url": "http://127.0.0.1:18787/",
+      "port": 18787,
+      "expect": "root-id"
+    },
+    "fixed_control": {
+      "build": "ruoji6-amd64-2026-11-05",
+      "lab_path": "lab/go1.26/artx",
+      "url": "http://127.0.0.1:18788/",
+      "port": 18788,
+      "expect": "rejected"
+    }
+  }
+}

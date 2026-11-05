@@ -1,0 +1,9 @@
+observed_at_utc: 2026-11-05T14:15:24Z
+container_id: 970d339090fb014a0d0295c0676ca8498ff19325f589376231d0e3eeeaa1f57d
+container_created_utc: 2026-11-05T14:15:13.302033521Z
+image_manifest: sha256:cb85a7206290dc1813e3203e044741054b26c7a7c557c7d9d6d91af20aeb232b
+command: python3 -u poc.py --profile affected
+proof_command=id
+{"profile": "affected", "status": 200}
+PROOF: uid=0(root) gid=0(root) groups=0(root)
+PASS: container-root command execution observed
