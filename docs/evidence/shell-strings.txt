@@ -1,0 +1,5 @@
+
+evidence/artex-tomicdd-amd64:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 1366c00 2d684950 585a6f6b 73682d63 2f5c2574  -hIPXZoksh-c/\%t

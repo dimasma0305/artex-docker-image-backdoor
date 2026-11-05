@@ -1,0 +1,430 @@
+
+evidence/artex-tomicdd-amd64:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000f92fe0 <github.com/Autumn-27/artex/server.(*Server).authLogin>:
+  f92fe0:	lea    -0x50(%rsp),%r12
+  f92fe5:	cmp    0x10(%r14),%r12
+  f92fe9:	jbe    f937e5 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x805>
+  f92fef:	push   %rbp
+  f92ff0:	mov    %rsp,%rbp
+  f92ff3:	sub    $0xc8,%rsp
+  f92ffa:	mov    %rax,0xd8(%rsp)
+  f93002:	mov    %rdi,0xf0(%rsp)
+  f9300a:	mov    %rcx,0xe8(%rsp)
+  f93012:	mov    %rbx,0xe0(%rsp)
+  f9301a:	call   1043de0 <github.com/Autumn-27/artex/server.(*Server).pg>
+  f9301f:	nop
+  f93020:	test   %rax,%rax
+  f93023:	je     f93074 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x94>
+  f93025:	mov    %rax,0x88(%rsp)
+  f9302d:	lea    0x2f9c2c(%rip),%rax        # 128cc60 <type:*+0x178c60>
+  f93034:	call   4256c0 <runtime.newobject>
+  f93039:	mov    %rax,0xc0(%rsp)
+  f93041:	mov    0xf0(%rsp),%rcx
+  f93049:	mov    0x40(%rcx),%rdx
+  f9304d:	mov    0x48(%rcx),%rcx
+  f93051:	mov    %rcx,0x80(%rsp)
+  f93059:	test   %rdx,%rdx
+  f9305c:	je     f9307d <github.com/Autumn-27/artex/server.(*Server).authLogin+0x9d>
+  f9305e:	mov    0x8(%rdx),%rbx
+  f93062:	mov    0x1967ef7(%rip),%rsi        # 28faf60 <github.com/Autumn-27/artex/server..typeAssert.10>
+  f93069:	mov    (%rsi),%rdi
+  f9306c:	mov    0x10(%rdx),%edx
+  f9306f:	jmp    f937a5 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x7c5>
+  f93074:	add    $0xc8,%rsp
+  f9307b:	pop    %rbp
+  f9307c:	ret
+  f9307d:	mov    %rdx,0xb8(%rsp)
+  f93085:	lea    0x38a894(%rip),%rax        # 131d920 <type:*+0x209920>
+  f9308c:	call   4256c0 <runtime.newobject>
+  f93091:	mov    0xb8(%rsp),%rcx
+  f93099:	mov    %rcx,(%rax)
+  f9309c:	cmpl   $0x0,0x1a0bd5d(%rip)        # 299ee00 <runtime.writeBarrier>
+  f930a3:	jne    f930af <github.com/Autumn-27/artex/server.(*Server).authLogin+0xcf>
+  f930a5:	mov    0x80(%rsp),%rdx
+  f930ad:	jmp    f930bf <github.com/Autumn-27/artex/server.(*Server).authLogin+0xdf>
+  f930af:	call   48f9e0 <runtime.gcWriteBarrier1>
+  f930b4:	mov    0x80(%rsp),%rdx
+  f930bc:	mov    %rdx,(%r11)
+  f930bf:	mov    %rdx,0x8(%rax)
+  f930c3:	lea    0x1ff5d6(%rip),%rbx        # 11926a0 <type:*+0x7e6a0>
+  f930ca:	mov    0xc0(%rsp),%rcx
+  f930d2:	call   75e780 <encoding/json.(*Decoder).Decode>
+  f930d7:	nopw   0x0(%rax,%rax,1)
+  f930e0:	test   %rax,%rax
+  f930e3:	jne    f9371a <github.com/Autumn-27/artex/server.(*Server).authLogin+0x73a>
+  f930e9:	mov    0xc0(%rsp),%rdx
+  f930f1:	mov    0x28(%rdx),%rbx
+  f930f5:	test   %rbx,%rbx
+  f930f8:	je     f932f2 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x312>
+  f930fe:	mov    0x20(%rdx),%rcx
+  f93102:	nop
+  f93103:	cmpb   $0x21,(%rcx)
+  f93106:	jne    f9326e <github.com/Autumn-27/artex/server.(*Server).authLogin+0x28e>
+  f9310c:	dec    %rbx
+  f9310f:	mov    %rbx,%rdx
+  f93112:	neg    %rdx
+  f93115:	sar    $0x3f,%rdx
+  f93119:	and    $0x1,%edx
+  f9311c:	lea    (%rcx,%rdx,1),%rax
+  f93120:	call   f93820 <github.com/Autumn-27/artex/server.verifyCaptcha>
+  f93125:	mov    %rax,0x90(%rsp)
+  f9312d:	mov    %rbx,0x58(%rsp)
+  f93132:	mov    %rcx,0x68(%rsp)
+  f93137:	mov    %rdi,0xa0(%rsp)
+  f9313f:	nop
+  f93140:	call   486180 <runtime.makemap_small>
+  f93145:	mov    %rax,0x78(%rsp)
+  f9314a:	mov    0x90(%rsp),%rax
+  f93152:	mov    0x58(%rsp),%rbx
+  f93157:	call   485aa0 <runtime.convTstring>
+  f9315c:	mov    %rax,0xb0(%rsp)
+  f93164:	lea    0x29a615(%rip),%rax        # 122d780 <type:*+0x119780>
+  f9316b:	mov    0x78(%rsp),%rbx
+  f93170:	lea    0x3db0da(%rip),%rcx        # 136e251 <go:string.*+0x76f9>
+  f93177:	mov    $0x7,%edi
+  f9317c:	nopl   0x0(%rax)
+  f93180:	call   416980 <runtime.mapassign_faststr>
+  f93185:	lea    0x217894(%rip),%rcx        # 11aaa20 <type:*+0x96a20>
+  f9318c:	mov    %rcx,(%rax)
+  f9318f:	cmpl   $0x0,0x1a0bc6a(%rip)        # 299ee00 <runtime.writeBarrier>
+  f93196:	jne    f931a2 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x1c2>
+  f93198:	mov    0xb0(%rsp),%r8
+  f931a0:	jmp    f931ba <github.com/Autumn-27/artex/server.(*Server).authLogin+0x1da>
+  f931a2:	mov    0x8(%rax),%rdx
+  f931a6:	call   48fa00 <runtime.gcWriteBarrier2>
+  f931ab:	mov    0xb0(%rsp),%r8
+  f931b3:	mov    %r8,(%r11)
+  f931b6:	mov    %rdx,0x8(%r11)
+  f931ba:	mov    %r8,0x8(%rax)
+  f931be:	mov    0x68(%rsp),%rdx
+  f931c3:	test   %rdx,%rdx
+  f931c6:	je     f9323e <github.com/Autumn-27/artex/server.(*Server).authLogin+0x25e>
+  f931c8:	mov    0x18(%rdx),%rcx
+  f931cc:	mov    0xa0(%rsp),%rax
+  f931d4:	call   *%rcx
+  f931d6:	call   485aa0 <runtime.convTstring>
+  f931db:	mov    %rax,0xb0(%rsp)
+  f931e3:	lea    0x29a596(%rip),%rax        # 122d780 <type:*+0x119780>
+  f931ea:	mov    0x78(%rsp),%rbx
+  f931ef:	lea    0x3d58bc(%rip),%rcx        # 1368ab2 <go:string.*+0x1f5a>
+  f931f6:	mov    $0x5,%edi
+  f931fb:	nopl   0x0(%rax,%rax,1)
+  f93200:	call   416980 <runtime.mapassign_faststr>
+  f93205:	lea    0x217814(%rip),%rcx        # 11aaa20 <type:*+0x96a20>
+  f9320c:	mov    %rcx,(%rax)
+  f9320f:	cmpl   $0x0,0x1a0bbea(%rip)        # 299ee00 <runtime.writeBarrier>
+  f93216:	jne    f93222 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x242>
+  f93218:	mov    0xb0(%rsp),%r8
+  f93220:	jmp    f9323a <github.com/Autumn-27/artex/server.(*Server).authLogin+0x25a>
+  f93222:	mov    0x8(%rax),%rdx
+  f93226:	call   48fa00 <runtime.gcWriteBarrier2>
+  f9322b:	mov    0xb0(%rsp),%r8
+  f93233:	mov    %r8,(%r11)
+  f93236:	mov    %rdx,0x8(%r11)
+  f9323a:	mov    %r8,0x8(%rax)
+  f9323e:	mov    0xe0(%rsp),%rax
+  f93246:	mov    0xe8(%rsp),%rbx
+  f9324e:	mov    $0xc8,%ecx
+  f93253:	lea    0x29a526(%rip),%rdi        # 122d780 <type:*+0x119780>
+  f9325a:	mov    0x78(%rsp),%rsi
+  f9325f:	nop
+  f93260:	call   1043840 <github.com/Autumn-27/artex/server.writeJSON>
+  f93265:	add    $0xc8,%rsp
+  f9326c:	pop    %rbp
+  f9326d:	ret
+  f9326e:	call   486180 <runtime.makemap_small>
+  f93273:	mov    %rax,0xa8(%rsp)
+  f9327b:	mov    %rax,%rbx
+  f9327e:	lea    0x3dafcc(%rip),%rcx        # 136e251 <go:string.*+0x76f9>
+  f93285:	mov    $0x7,%edi
+  f9328a:	lea    0x29a4ef(%rip),%rax        # 122d780 <type:*+0x119780>
+  f93291:	call   416980 <runtime.mapassign_faststr>
+  f93296:	lea    0x217783(%rip),%rcx        # 11aaa20 <type:*+0x96a20>
+  f9329d:	mov    %rcx,(%rax)
+  f932a0:	cmpl   $0x0,0x1a0bb59(%rip)        # 299ee00 <runtime.writeBarrier>
+  f932a7:	je     f932b5 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x2d5>
+  f932a9:	mov    0x8(%rax),%rdx
+  f932ad:	call   48f9e0 <runtime.gcWriteBarrier1>
+  f932b2:	mov    %rdx,(%r11)
+  f932b5:	lea    0xeb7664(%rip),%rdx        # 1e4a920 <time..dict.parseNanoseconds[string]+0x8c0>
+  f932bc:	mov    %rdx,0x8(%rax)
+  f932c0:	mov    0xe0(%rsp),%rax
+  f932c8:	mov    0xe8(%rsp),%rbx
+  f932d0:	mov    $0xc8,%ecx
+  f932d5:	lea    0x29a4a4(%rip),%rdi        # 122d780 <type:*+0x119780>
+  f932dc:	mov    0xa8(%rsp),%rsi
+  f932e4:	call   1043840 <github.com/Autumn-27/artex/server.writeJSON>
+  f932e9:	add    $0xc8,%rsp
+  f932f0:	pop    %rbp
+  f932f1:	ret
+  f932f2:	cmpq   $0x5,0x8(%rdx)
+  f932f7:	jne    f9330e <github.com/Autumn-27/artex/server.(*Server).authLogin+0x32e>
+  f932f9:	mov    (%rdx),%rsi
+  f932fc:	cmpl   $0x45545241,(%rsi)
+  f93302:	jne    f9330e <github.com/Autumn-27/artex/server.(*Server).authLogin+0x32e>
+  f93304:	cmpb   $0x58,0x4(%rsi)
+  f93308:	je     f93393 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x3b3>
+  f9330e:	nop
+  f9330f:	call   486180 <runtime.makemap_small>
+  f93314:	mov    %rax,0xa8(%rsp)
+  f9331c:	mov    %rax,%rbx
+  f9331f:	lea    0x3d578c(%rip),%rcx        # 1368ab2 <go:string.*+0x1f5a>
+  f93326:	mov    $0x5,%edi
+  f9332b:	lea    0x29a44e(%rip),%rax        # 122d780 <type:*+0x119780>
+  f93332:	call   416980 <runtime.mapassign_faststr>
+  f93337:	lea    0x2176e2(%rip),%rcx        # 11aaa20 <type:*+0x96a20>
+  f9333e:	mov    %rcx,(%rax)
+  f93341:	cmpl   $0x0,0x1a0bab8(%rip)        # 299ee00 <runtime.writeBarrier>
+  f93348:	je     f93356 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x376>
+  f9334a:	mov    0x8(%rax),%rdx
+  f9334e:	call   48f9e0 <runtime.gcWriteBarrier1>
+  f93353:	mov    %rdx,(%r11)
+  f93356:	lea    0xeb75d3(%rip),%rdx        # 1e4a930 <time..dict.parseNanoseconds[string]+0x8d0>
+  f9335d:	mov    %rdx,0x8(%rax)
+  f93361:	mov    0xe0(%rsp),%rax
+  f93369:	mov    0xe8(%rsp),%rbx
+  f93371:	mov    $0x191,%ecx
+  f93376:	lea    0x29a403(%rip),%rdi        # 122d780 <type:*+0x119780>
+  f9337d:	mov    0xa8(%rsp),%rsi
+  f93385:	call   1043840 <github.com/Autumn-27/artex/server.writeJSON>
+  f9338a:	add    $0xc8,%rsp
+  f93391:	pop    %rbp
+  f93392:	ret
+  f93393:	mov    0x88(%rsp),%rax
+  f9339b:	lea    0x3f7506(%rip),%rbx        # 138a8a8 <go:string.*+0x23d50>
+  f933a2:	mov    $0x12,%ecx
+  f933a7:	call   a722e0 <github.com/Autumn-27/artex/db.(*DB).GetSetting>
+  f933ac:	test   %rdi,%rdi
+  f933af:	jne    f93695 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x6b5>
+  f933b5:	test   %cl,%cl
+  f933b7:	je     f93610 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x630>
+  f933bd:	nopl   (%rax)
+  f933c0:	test   %rbx,%rbx
+  f933c3:	je     f93610 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x630>
+  f933c9:	mov    %rbx,0x60(%rsp)
+  f933ce:	mov    %rax,0x98(%rsp)
+  f933d6:	mov    0xc0(%rsp),%rdx
+  f933de:	mov    0x10(%rdx),%rbx
+  f933e2:	mov    0x18(%rdx),%rcx
+  f933e6:	lea    0x30(%rsp),%rax
+  f933eb:	call   46f540 <runtime.stringtoslicebyte>
+  f933f0:	mov    0x98(%rsp),%rdx
+  f933f8:	test   %rdx,%rdx
+  f933fb:	lea    0x1a0acde(%rip),%rsi        # 299e0e0 <runtime.zerobase>
+  f93402:	cmovne %rdx,%rsi
+  f93406:	mov    %rax,%rdi
+  f93409:	mov    %rcx,%r8
+  f9340c:	mov    %rsi,%rax
+  f9340f:	mov    0x60(%rsp),%rcx
+  f93414:	mov    %rbx,%rsi
+  f93417:	mov    %rcx,%rbx
+  f9341a:	call   e765c0 <golang.org/x/crypto/bcrypt.CompareHashAndPassword>
+  f9341f:	nop
+  f93420:	test   %rax,%rax
+  f93423:	je     f934ae <github.com/Autumn-27/artex/server.(*Server).authLogin+0x4ce>
+  f93429:	nop
+  f9342a:	call   486180 <runtime.makemap_small>
+  f9342f:	mov    %rax,0xa8(%rsp)
+  f93437:	mov    %rax,%rbx
+  f9343a:	lea    0x3d5671(%rip),%rcx        # 1368ab2 <go:string.*+0x1f5a>
+  f93441:	mov    $0x5,%edi
+  f93446:	lea    0x29a333(%rip),%rax        # 122d780 <type:*+0x119780>
+  f9344d:	call   416980 <runtime.mapassign_faststr>
+  f93452:	lea    0x2175c7(%rip),%rcx        # 11aaa20 <type:*+0x96a20>
+  f93459:	mov    %rcx,(%rax)
+  f9345c:	cmpl   $0x0,0x1a0b99d(%rip)        # 299ee00 <runtime.writeBarrier>
+  f93463:	je     f93471 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x491>
+  f93465:	mov    0x8(%rax),%rdx
+  f93469:	call   48f9e0 <runtime.gcWriteBarrier1>
+  f9346e:	mov    %rdx,(%r11)
+  f93471:	lea    0xeb74b8(%rip),%rdx        # 1e4a930 <time..dict.parseNanoseconds[string]+0x8d0>
+  f93478:	mov    %rdx,0x8(%rax)
+  f9347c:	mov    0xe0(%rsp),%rax
+  f93484:	mov    0xe8(%rsp),%rbx
+  f9348c:	mov    $0x191,%ecx
+  f93491:	lea    0x29a2e8(%rip),%rdi        # 122d780 <type:*+0x119780>
+  f93498:	mov    0xa8(%rsp),%rsi
+  f934a0:	call   1043840 <github.com/Autumn-27/artex/server.writeJSON>
+  f934a5:	add    $0xc8,%rsp
+  f934ac:	pop    %rbp
+  f934ad:	ret
+  f934ae:	mov    0xd8(%rsp),%rdx
+  f934b6:	mov    0x30(%rdx),%rax
+  f934ba:	mov    0x38(%rdx),%rbx
+  f934be:	mov    0x40(%rdx),%rcx
+  f934c2:	call   f917c0 <github.com/Autumn-27/artex/server.signJWT>
+  f934c7:	test   %rcx,%rcx
+  f934ca:	je     f93555 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x575>
+  f934d0:	nop
+  f934d1:	call   486180 <runtime.makemap_small>
+  f934d6:	mov    %rax,0xa8(%rsp)
+  f934de:	mov    %rax,%rbx
+  f934e1:	lea    0x3d55ca(%rip),%rcx        # 1368ab2 <go:string.*+0x1f5a>
+  f934e8:	mov    $0x5,%edi
+  f934ed:	lea    0x29a28c(%rip),%rax        # 122d780 <type:*+0x119780>
+  f934f4:	call   416980 <runtime.mapassign_faststr>
+  f934f9:	lea    0x217520(%rip),%rcx        # 11aaa20 <type:*+0x96a20>
+  f93500:	mov    %rcx,(%rax)
+  f93503:	cmpl   $0x0,0x1a0b8f6(%rip)        # 299ee00 <runtime.writeBarrier>
+  f9350a:	je     f93518 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x538>
+  f9350c:	mov    0x8(%rax),%rdx
+  f93510:	call   48f9e0 <runtime.gcWriteBarrier1>
+  f93515:	mov    %rdx,(%r11)
+  f93518:	lea    0xeb73b1(%rip),%rdx        # 1e4a8d0 <time..dict.parseNanoseconds[string]+0x870>
+  f9351f:	mov    %rdx,0x8(%rax)
+  f93523:	mov    0xe0(%rsp),%rax
+  f9352b:	mov    0xe8(%rsp),%rbx
+  f93533:	mov    $0x1f4,%ecx
+  f93538:	lea    0x29a241(%rip),%rdi        # 122d780 <type:*+0x119780>
+  f9353f:	mov    0xa8(%rsp),%rsi
+  f93547:	call   1043840 <github.com/Autumn-27/artex/server.writeJSON>
+  f9354c:	add    $0xc8,%rsp
+  f93553:	pop    %rbp
+  f93554:	ret
+  f93555:	mov    %rbx,0x50(%rsp)
+  f9355a:	mov    %rax,0x70(%rsp)
+  f9355f:	nop
+  f93560:	call   486180 <runtime.makemap_small>
+  f93565:	mov    %rax,0xa8(%rsp)
+  f9356d:	mov    0x70(%rsp),%rax
+  f93572:	mov    0x50(%rsp),%rbx
+  f93577:	call   485aa0 <runtime.convTstring>
+  f9357c:	mov    %rax,0xb0(%rsp)
+  f93584:	lea    0x29a1f5(%rip),%rax        # 122d780 <type:*+0x119780>
+  f9358b:	mov    0xa8(%rsp),%rbx
+  f93593:	lea    0x3d555e(%rip),%rcx        # 1368af8 <go:string.*+0x1fa0>
+  f9359a:	mov    $0x5,%edi
+  f9359f:	nop
+  f935a0:	call   416980 <runtime.mapassign_faststr>
+  f935a5:	lea    0x217474(%rip),%rcx        # 11aaa20 <type:*+0x96a20>
+  f935ac:	mov    %rcx,(%rax)
+  f935af:	cmpl   $0x0,0x1a0b84a(%rip)        # 299ee00 <runtime.writeBarrier>
+  f935b6:	jne    f935c2 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x5e2>
+  f935b8:	mov    0xb0(%rsp),%r8
+  f935c0:	jmp    f935da <github.com/Autumn-27/artex/server.(*Server).authLogin+0x5fa>
+  f935c2:	mov    0x8(%rax),%rdx
+  f935c6:	call   48fa00 <runtime.gcWriteBarrier2>
+  f935cb:	mov    0xb0(%rsp),%r8
+  f935d3:	mov    %r8,(%r11)
+  f935d6:	mov    %rdx,0x8(%r11)
+  f935da:	mov    %r8,0x8(%rax)
+  f935de:	mov    0xe0(%rsp),%rax
+  f935e6:	mov    0xe8(%rsp),%rbx
+  f935ee:	mov    $0xc8,%ecx
+  f935f3:	lea    0x29a186(%rip),%rdi        # 122d780 <type:*+0x119780>
+  f935fa:	mov    0xa8(%rsp),%rsi
+  f93602:	call   1043840 <github.com/Autumn-27/artex/server.writeJSON>
+  f93607:	add    $0xc8,%rsp
+  f9360e:	pop    %rbp
+  f9360f:	ret
+  f93610:	nop
+  f93611:	call   486180 <runtime.makemap_small>
+  f93616:	mov    %rax,0xa8(%rsp)
+  f9361e:	mov    %rax,%rbx
+  f93621:	lea    0x3d548a(%rip),%rcx        # 1368ab2 <go:string.*+0x1f5a>
+  f93628:	mov    $0x5,%edi
+  f9362d:	lea    0x29a14c(%rip),%rax        # 122d780 <type:*+0x119780>
+  f93634:	call   416980 <runtime.mapassign_faststr>
+  f93639:	lea    0x2173e0(%rip),%rcx        # 11aaa20 <type:*+0x96a20>
+  f93640:	mov    %rcx,(%rax)
+  f93643:	cmpl   $0x0,0x1a0b7b6(%rip)        # 299ee00 <runtime.writeBarrier>
+  f9364a:	je     f93658 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x678>
+  f9364c:	mov    0x8(%rax),%rdx
+  f93650:	call   48f9e0 <runtime.gcWriteBarrier1>
+  f93655:	mov    %rdx,(%r11)
+  f93658:	lea    0xeb72a1(%rip),%rdx        # 1e4a900 <time..dict.parseNanoseconds[string]+0x8a0>
+  f9365f:	mov    %rdx,0x8(%rax)
+  f93663:	mov    0xe0(%rsp),%rax
+  f9366b:	mov    0xe8(%rsp),%rbx
+  f93673:	mov    $0x193,%ecx
+  f93678:	lea    0x29a101(%rip),%rdi        # 122d780 <type:*+0x119780>
+  f9367f:	mov    0xa8(%rsp),%rsi
+  f93687:	call   1043840 <github.com/Autumn-27/artex/server.writeJSON>
+  f9368c:	add    $0xc8,%rsp
+  f93693:	pop    %rbp
+  f93694:	ret
+  f93695:	nop
+  f93696:	call   486180 <runtime.makemap_small>
+  f9369b:	mov    %rax,0xa8(%rsp)
+  f936a3:	mov    %rax,%rbx
+  f936a6:	lea    0x3d5405(%rip),%rcx        # 1368ab2 <go:string.*+0x1f5a>
+  f936ad:	mov    $0x5,%edi
+  f936b2:	lea    0x29a0c7(%rip),%rax        # 122d780 <type:*+0x119780>
+  f936b9:	call   416980 <runtime.mapassign_faststr>
+  f936be:	lea    0x21735b(%rip),%rcx        # 11aaa20 <type:*+0x96a20>
+  f936c5:	mov    %rcx,(%rax)
+  f936c8:	cmpl   $0x0,0x1a0b731(%rip)        # 299ee00 <runtime.writeBarrier>
+  f936cf:	je     f936dd <github.com/Autumn-27/artex/server.(*Server).authLogin+0x6fd>
+  f936d1:	mov    0x8(%rax),%rdx
+  f936d5:	call   48f9e0 <runtime.gcWriteBarrier1>
+  f936da:	mov    %rdx,(%r11)
+  f936dd:	lea    0xeb71ac(%rip),%rdx        # 1e4a890 <time..dict.parseNanoseconds[string]+0x830>
+  f936e4:	mov    %rdx,0x8(%rax)
+  f936e8:	mov    0xe0(%rsp),%rax
+  f936f0:	mov    0xe8(%rsp),%rbx
+  f936f8:	mov    $0x1f7,%ecx
+  f936fd:	lea    0x29a07c(%rip),%rdi        # 122d780 <type:*+0x119780>
+  f93704:	mov    0xa8(%rsp),%rsi
+  f9370c:	call   1043840 <github.com/Autumn-27/artex/server.writeJSON>
+  f93711:	add    $0xc8,%rsp
+  f93718:	pop    %rbp
+  f93719:	ret
+  f9371a:	nop
+  f9371b:	nopl   0x0(%rax,%rax,1)
+  f93720:	call   486180 <runtime.makemap_small>
+  f93725:	mov    %rax,0xa8(%rsp)
+  f9372d:	mov    %rax,%rbx
+  f93730:	lea    0x3d537b(%rip),%rcx        # 1368ab2 <go:string.*+0x1f5a>
+  f93737:	mov    $0x5,%edi
+  f9373c:	lea    0x29a03d(%rip),%rax        # 122d780 <type:*+0x119780>
+  f93743:	call   416980 <runtime.mapassign_faststr>
+  f93748:	lea    0x2172d1(%rip),%rcx        # 11aaa20 <type:*+0x96a20>
+  f9374f:	mov    %rcx,(%rax)
+  f93752:	cmpl   $0x0,0x1a0b6a7(%rip)        # 299ee00 <runtime.writeBarrier>
+  f93759:	je     f93768 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x788>
+  f9375b:	mov    0x8(%rax),%rdx
+  f9375f:	nop
+  f93760:	call   48f9e0 <runtime.gcWriteBarrier1>
+  f93765:	mov    %rdx,(%r11)
+  f93768:	lea    0xeb7171(%rip),%rdx        # 1e4a8e0 <time..dict.parseNanoseconds[string]+0x880>
+  f9376f:	mov    %rdx,0x8(%rax)
+  f93773:	mov    0xe0(%rsp),%rax
+  f9377b:	mov    0xe8(%rsp),%rbx
+  f93783:	mov    $0x190,%ecx
+  f93788:	lea    0x299ff1(%rip),%rdi        # 122d780 <type:*+0x119780>
+  f9378f:	mov    0xa8(%rsp),%rsi
+  f93797:	call   1043840 <github.com/Autumn-27/artex/server.writeJSON>
+  f9379c:	add    $0xc8,%rsp
+  f937a3:	pop    %rbp
+  f937a4:	ret
+  f937a5:	mov    %rdx,%r8
+  f937a8:	and    %rdi,%rdx
+  f937ab:	shl    $0x4,%rdx
+  f937af:	mov    0x8(%rdx,%rsi,1),%r9
+  f937b4:	cmp    %rbx,%r9
+  f937b7:	je     f937d9 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x7f9>
+  f937b9:	lea    0x1(%r8),%rdx
+  f937bd:	nopl   (%rax)
+  f937c0:	test   %r9,%r9
+  f937c3:	jne    f937a5 <github.com/Autumn-27/artex/server.(*Server).authLogin+0x7c5>
+  f937c5:	lea    0x1967794(%rip),%rax        # 28faf60 <github.com/Autumn-27/artex/server..typeAssert.10>
+  f937cc:	call   421ae0 <runtime.typeAssert>
+  f937d1:	mov    %rax,%rdx
+  f937d4:	jmp    f9307d <github.com/Autumn-27/artex/server.(*Server).authLogin+0x9d>
+  f937d9:	mov    0x10(%rdx,%rsi,1),%rdx
+  f937de:	xchg   %ax,%ax
+  f937e0:	jmp    f9307d <github.com/Autumn-27/artex/server.(*Server).authLogin+0x9d>
+  f937e5:	mov    %rax,0x8(%rsp)
+  f937ea:	mov    %rbx,0x10(%rsp)
+  f937ef:	mov    %rcx,0x18(%rsp)
+  f937f4:	mov    %rdi,0x20(%rsp)
+  f937f9:	call   48e080 <runtime.morestack_noctxt.abi0>
+  f937fe:	mov    0x8(%rsp),%rax
+  f93803:	mov    0x10(%rsp),%rbx
+  f93808:	mov    0x18(%rsp),%rcx
+  f9380d:	mov    0x20(%rsp),%rdi
+  f93812:	jmp    f92fe0 <github.com/Autumn-27/artex/server.(*Server).authLogin>

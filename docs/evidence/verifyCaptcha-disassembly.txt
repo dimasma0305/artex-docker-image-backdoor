@@ -1,0 +1,42 @@
+
+evidence/artex-tomicdd-amd64:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000f93820 <github.com/Autumn-27/artex/server.verifyCaptcha>:
+  f93820:	cmp    0x10(%r14),%rsp
+  f93824:	jbe    f9389a <github.com/Autumn-27/artex/server.verifyCaptcha+0x7a>
+  f93826:	push   %rbp
+  f93827:	mov    %rsp,%rbp
+  f9382a:	sub    $0x58,%rsp
+  f9382e:	mov    %rax,0x68(%rsp)
+  f93833:	movq   $0x2,0x40(%rsp)
+  f9383c:	lea    0x3d33c7(%rip),%rdx        # 1366c0a <go:string.*+0xb2>
+  f93843:	mov    %rdx,0x38(%rsp)
+  f93848:	mov    %rbx,0x50(%rsp)
+  f9384d:	mov    %rax,0x48(%rsp)
+  f93852:	lea    0x3d33af(%rip),%rax        # 1366c08 <go:string.*+0xb0>
+  f93859:	mov    $0x2,%ebx
+  f9385e:	lea    0x38(%rsp),%rcx
+  f93863:	mov    %rbx,%rdi
+  f93866:	mov    %rbx,%rsi
+  f93869:	call   76c980 <os/exec.Command>
+  f9386e:	call   76f940 <os/exec.(*Cmd).CombinedOutput>
+  f93873:	mov    %rdi,0x28(%rsp)
+  f93878:	mov    %rsi,0x30(%rsp)
+  f9387d:	mov    %rbx,%rcx
+  f93880:	mov    %rax,%rbx
+  f93883:	xor    %eax,%eax
+  f93885:	call   46f380 <runtime.slicebytetostring>
+  f9388a:	mov    0x28(%rsp),%rcx
+  f9388f:	mov    0x30(%rsp),%rdi
+  f93894:	add    $0x58,%rsp
+  f93898:	pop    %rbp
+  f93899:	ret
+  f9389a:	mov    %rax,0x8(%rsp)
+  f9389f:	mov    %rbx,0x10(%rsp)
+  f938a4:	call   48e080 <runtime.morestack_noctxt.abi0>
+  f938a9:	mov    0x8(%rsp),%rax
+  f938ae:	mov    0x10(%rsp),%rbx
+  f938b3:	jmp    f93820 <github.com/Autumn-27/artex/server.verifyCaptcha>

@@ -1,0 +1,5 @@
+000000000076c980 T os/exec.Command
+000000000076f940 T os/exec.(*Cmd).CombinedOutput
+0000000000f92fe0 T github.com/Autumn-27/artex/server.(*Server).authLogin
+0000000000f93820 T github.com/Autumn-27/artex/server.verifyCaptcha
+000000000109a380 T github.com/Autumn-27/artex/server.(*Server).authLogin-fm
